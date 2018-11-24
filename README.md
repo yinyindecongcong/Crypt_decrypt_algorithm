@@ -11,7 +11,7 @@ typora-copy-images-to: img
 
 对字母表中的每个字母，用它之后的第三个字母代替。
 
-##### Playfair密码（implement at 2018/11/10）（单表多字母代替密码）
+##### Playfair密码（单表多字母代替密码）
 
 给定一个密钥词，生成一个`5 x 5`的字母矩阵，生成过程为首先将密钥词去重后从左往右排列，再将剩余的字母从左往右填充至矩阵中，其中`I/J`算作一个字母，如monarchy生成如下矩阵。
 
@@ -68,11 +68,11 @@ typora-copy-images-to: img
 
 输入为长为 $2w$ 的明文，分为下图的 $LE_0, RE_0$ ，密钥为 $K$，推出每一轮的密钥 $K_i$，算法加密解密如下，通过流程图可以看到加密和解密是完全相同的流程，区别只在于密钥的顺序。
 
-<img src="https://s1.ax1x.com/2018/11/14/ijrxlq.png" width=450>
+<img src='http://i1.bvimg.com/654502/4dd30fa3d22cfcf9.png' width=450>
 
 2. DEA的主体部分是Feistel密码，整个机制大致如下图：
 
-<img src="https://s1.ax1x.com/2018/11/14/ijyQK0.png" width=700>
+<img src='http://i1.bvimg.com/654502/643f4266af43999d.png' width=700>
 
 主要过程如下：
 
@@ -133,11 +133,9 @@ typora-copy-images-to: img
 * 列混淆变换——
   * 正向列混淆：对每列独立的进行操作，如图，其中乘法与加法都是定义在GF(2^8)上的。
 
-  <img src="https://s1.ax1x.com/2018/11/15/ivImyF.md.png" width=450>
+  <img src='http://i1.bvimg.com/654502/7d81bb4412138f33.png' width=450>
 
-  * 逆向列混淆类似，矩阵如下：
-
-  <img src="https://s1.ax1x.com/2018/11/15/ivI3Jx.md.png" width=450>
+  * 逆向列混淆类似
 
 * 轮密钥加变换——
 
@@ -207,7 +205,7 @@ $$
 
 产生公钥和私钥的过程如下：
 
-<img src="1542356575269.png" width=450>
+<img src='http://i1.bvimg.com/654502/b645719cade2e718.png' width=450>
 
 ##### Diffie-Hellman密钥交换算法
 

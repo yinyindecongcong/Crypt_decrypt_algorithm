@@ -21,13 +21,13 @@ def crypt_one_word(word, mat):
     word = re.sub(r'j', 'i', word.lower())
     cut, res = word[0], ''
     for i in range(1, len(word)):
-        cut += word[i] if word[i] != cut[-1] else 'x' + word[i]
+        cut += word[i] if len(cut) % 2 == 0 or word[i] != cut[-1] else 'x' + word[i]
     if len(cut) % 2: cut += 'x'
     for i in range(0, len(cut), 2):
         pos1, pos2 = mat[cut[i]], mat[cut[i + 1]]
-        if pos1 // 5 == pos2 // 5:
+        if pos1 // 5 == pos2 // 5:  #同一行
             res += mat[pos1 // 5 * 5 + (pos1 + 1) % 5] + mat[pos2 // 5 * 5 + (pos2 + 1) % 5]
-        elif pos1 % 5 == pos2 % 5:
+        elif pos1 % 5 == pos2 % 5: #同一列
             res += mat[(pos1 // 5 + 1) % 5 * 5 + pos1 % 5] + mat[(pos2 // 5 + 1) % 5 * 5 + pos1 % 5]
         else:
             res += mat[pos1 // 5 * 5 + pos2 % 5] + mat[pos2 // 5 * 5 + pos1 % 5]
